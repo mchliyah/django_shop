@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>django shop</title>
+</head>
+
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+<h1> Products </h1>
+<div class="row">
+    {% for item in product %}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="{{item.image_url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+                <p class="card-text">{{item.price}}</p>
+                <a href="#" class="btn btn-primary">Add to Card</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</body>
+
+{% endblock %}
+</html>
